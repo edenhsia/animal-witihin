@@ -1,4 +1,4 @@
-import type { ScoreKey } from '@/types/score'
+import type { ScoreKey } from '@/types/quiz'
 import { quizData } from '@/data/quizData'
 import { animalProfiles } from '@/data/animalProfiles'
 

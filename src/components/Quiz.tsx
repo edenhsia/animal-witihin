@@ -5,6 +5,7 @@ import { quizData } from '@/data/quizData'
 import { useNavigate } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 import { answerQuestion } from '@/store/quizSlice'
+import { useShuffledOptions } from '@/hooks/useShuffleOptions'
 
 export default function Quiz() {
   const navigate = useNavigate()
@@ -14,9 +15,10 @@ export default function Quiz() {
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null)
 
   const currentQuestionData = quizData[currentQuestion]
+  const shuffledOptions = useShuffledOptions(currentQuestionData.options)
 
   function handleAnserQuestion(index: number) {
-    const selectedOption = currentQuestionData.options[index]
+    const selectedOption = shuffledOptions[index]
 
     setSelectedIndex(index)
     dispatch(
@@ -50,7 +52,7 @@ export default function Quiz() {
     <Card className="p-6 w-full max-w-xl">
       <h2>{currentQuestionData.question}</h2>
       <div className="space-y-3">
-        {currentQuestionData.options.map((option, index) => {
+        {shuffledOptions.map((option, index) => {
           return (
             <Button
               key={index}

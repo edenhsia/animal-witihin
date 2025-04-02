@@ -4,3 +4,9 @@ export type ScoreKey =
   | 'intelligence'
   | 'independence'
   | 'curiosity'
+
+export interface Option {
+  value: string
+  text: string
+  score: Partial<Record<ScoreKey, number>>
+}
