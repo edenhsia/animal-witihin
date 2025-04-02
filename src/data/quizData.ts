@@ -46,7 +46,7 @@ export const quizData = [
       {
         value: 'D',
         text: '喝一種神秘果汁就會超速奔跑，但副作用是會冒汗像噴泉。',
-        score: { activity: 2, independence: 1, friendliness: 1 },
+        score: { activity: 2, independence: 1 },
       },
     ],
   },
@@ -117,7 +117,7 @@ export const quizData = [
       {
         value: 'C',
         text: '讀心耳機，能聽見人們潛意識裡的聲音。',
-        score: { intelligence: 2, independence: 1, friendliness: 1 },
+        score: { intelligence: 2, curiosity: 1 },
       },
       {
         value: 'D',
@@ -132,7 +132,7 @@ export const quizData = [
       {
         value: 'A',
         text: '測試自己有沒有 9 條命。',
-        score: { activity: 2, curiosity: 1, friendliness: 1 },
+        score: { activity: 2, curiosity: 1 },
       },
       {
         value: 'B',
@@ -188,7 +188,7 @@ export const quizData = [
       {
         value: 'B',
         text: '保持詭異的平衡姿勢不動，看起來像雕像一樣凝固在空間中。',
-        score: { activity: 2, independence: 1 },
+        score: { independence: 2, activity: 1 },
       },
       {
         value: 'C',
@@ -197,8 +197,8 @@ export const quizData = [
       },
       {
         value: 'D',
-        text: '無表情盯著評審，一動不動，給人一種『他到底在想什麼』的壓迫感。',
-        score: { friendliness: 2, curiosity: 1 },
+        text: '無表情盯著評審，一動不動，給人一種「他到底在想什麼」的壓迫感。',
+        score: { curiosity: 2, friendliness: 1 },
       },
     ],
   },
@@ -224,7 +224,7 @@ export const quizData = [
       {
         value: 'D',
         text: '讓每個人每天都會遇上一件好笑的小事，世界自帶喜感。',
-        score: { activity: 2, curiosity: 1, friendliness: 1 },
+        score: { activity: 2, curiosity: 1 },
       },
     ],
   },
