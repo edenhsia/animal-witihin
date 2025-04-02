@@ -1,18 +1,25 @@
 import { Card } from './ui/card'
 import { Button } from './ui/button'
-import { animalProfiles } from '@/data/animalProfiles'
 import { Link } from 'react-router-dom'
+import { useSelector } from 'react-redux'
+import { RootState } from '@/store'
+
+import { calcFinalScore, getBestMatchAnimal } from '@/utils/score'
 
 export default function Result() {
-  // TODO: 取得使用者選取結果，獲取最接近動物
+  const { answers } = useSelector((state: RootState) => state.quiz)
+
+  const finalScore = calcFinalScore(answers)
+  const bestMatchAnimal = getBestMatchAnimal(finalScore)
+
   return (
     <Card className="p-6 w-full max-w-xl">
       <h2 className="text-xl font-bold text-center">
-        你最像的動物是 🐾 {animalProfiles[0].name}
+        你最像的動物是 🐾 {bestMatchAnimal.name}
       </h2>
 
-      <img src={animalProfiles[0].image} className="w-64 rounded-xl mx-auto" />
-      <p>{animalProfiles[0].personality}</p>
+      <img src={bestMatchAnimal.image} className="w-64 rounded-xl mx-auto" />
+      <p>{bestMatchAnimal.personality}</p>
 
       <Button asChild>
         <Link to="/quiz">重新測驗</Link>
