@@ -3,14 +3,28 @@ import { Button } from './ui/button'
 import { useState, useEffect } from 'react'
 import { quizData } from '@/data/quizData'
 import { useNavigate } from 'react-router-dom'
+import { useDispatch } from 'react-redux'
+import { answerQuestion } from '@/store/quizSlice'
 
 export default function Quiz() {
   const navigate = useNavigate()
-  const [currentQuestion, setCurrentQuestion] = useState(8)
+  const dispatch = useDispatch()
+
+  const [currentQuestion, setCurrentQuestion] = useState(0)
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null)
 
+  const currentQuestionData = quizData[currentQuestion]
+
   function handleAnserQuestion(index: number) {
+    const selectedOption = currentQuestionData.options[index]
+
     setSelectedIndex(index)
+    dispatch(
+      answerQuestion({
+        questionIndex: currentQuestion,
+        answerValue: selectedOption.value,
+      })
+    )
 
     setTimeout(() => {
       if (currentQuestion < quizData.length - 1) {
@@ -34,9 +48,9 @@ export default function Quiz() {
 
   return (
     <Card className="p-6 w-full max-w-xl">
-      <h2>{quizData[currentQuestion].question}</h2>
+      <h2>{currentQuestionData.question}</h2>
       <div className="space-y-3">
-        {quizData[currentQuestion].options.map((option, index) => {
+        {currentQuestionData.options.map((option, index) => {
           return (
             <Button
               key={index}
