@@ -3,7 +3,7 @@ import { Button } from './ui/button'
 import { useState, useEffect } from 'react'
 import { quizData } from '@/data/quizData'
 
-export default function QuizQuestion() {
+export default function Quiz() {
   const [currentQuestion, setCurrentQuestion] = useState(0)
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null)
 
