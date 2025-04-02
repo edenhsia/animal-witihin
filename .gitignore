@@ -1,0 +1,47 @@
+# Node.js dependencies
+node_modules/
+
+# Vite build output
+dist/
+*.log
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Env config
+.env
+.env.local
+.env.*.local
+
+# IDE settings
+.vscode/
+.idea/
+
+# pnpm
+pnpm-lock.yaml
+
+# yarn
+yarn.lock
+
+# npm
+package-lock.json
+
+# shadcn/ui (in case you generate .next or .turbo folders)
+.next/
+.turbo/
+
+# Tailwind cache (optional, if enabled)
+.tailwind/
+
+# Mac metadata files
+*.DS_Store
+
+# Storybook (if used)
+.storybook-out/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
