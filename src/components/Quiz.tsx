@@ -2,23 +2,24 @@ import { Card } from './ui/card'
 import { Button } from './ui/button'
 import { useState, useEffect } from 'react'
 import { quizData } from '@/data/quizData'
+import { useNavigate } from 'react-router-dom'
 
 export default function Quiz() {
-  const [currentQuestion, setCurrentQuestion] = useState(0)
+  const navigate = useNavigate()
+  const [currentQuestion, setCurrentQuestion] = useState(8)
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null)
 
   function handleAnserQuestion(index: number) {
     setSelectedIndex(index)
 
-    if (currentQuestion < quizData.length - 1) {
-      setTimeout(() => {
+    setTimeout(() => {
+      if (currentQuestion < quizData.length - 1) {
         setCurrentQuestion((prev) => (prev += 1))
-      }, 1000)
+        return
+      }
 
-      return
-    }
-
-    // TODO: direct to result page
+      navigate('/result')
+    }, 1000)
   }
 
   function handleBack() {
