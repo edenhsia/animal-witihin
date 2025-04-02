@@ -33,7 +33,7 @@ export default function Quiz() {
       }
 
       navigate('/result')
-    }, 1000)
+    }, 550)
   }
 
   function handleBack() {
