@@ -1,6 +1,6 @@
 import { ThemeToggle } from './components/ThemeToggle'
 import ThemeProvider from './providers/ThemeProvider'
-import { Routes, Route } from 'react-router-dom'
+import { Routes, Route } from 'react-router'
 import Quiz from './components/Quiz'
 import Result from './components/Result'
 
