@@ -59,6 +59,7 @@ export default function Quiz() {
               variant={selectedIndex === index ? 'default' : 'outline'}
               className="w-full"
               onClick={() => handleAnserQuestion(index)}
+              disabled={selectedIndex !== null}
             >
               {option.text}
             </Button>
