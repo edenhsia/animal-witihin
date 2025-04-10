@@ -10,10 +10,10 @@ export const animalProfiles = [
     name_en: 'Long-tailed Tit',
     image: titImg,
     scores: {
-      activity: 8,
+      activity: 9,
       friendliness: 10,
       intelligence: 6,
-      independence: 4,
+      independence: 5,
       curiosity: 8,
     },
     personality:
@@ -26,9 +26,9 @@ export const animalProfiles = [
     scores: {
       activity: 6,
       friendliness: 5,
-      intelligence: 7,
-      independence: 10,
-      curiosity: 5,
+      intelligence: 9,
+      independence: 11,
+      curiosity: 6,
     },
     personality:
       '像北極灰狼的你擁有冷靜與獨立的個性。你追求自由、不喜歡被干涉，常在自己內心世界裡思考。行動低調，但總是精準。',
@@ -38,11 +38,11 @@ export const animalProfiles = [
     name_en: 'Owl Monkey',
     image: monkeyImg,
     scores: {
-      activity: 4,
-      friendliness: 4,
+      activity: 5,
+      friendliness: 6,
       intelligence: 10,
       independence: 9,
-      curiosity: 6,
+      curiosity: 8,
     },
     personality:
       '你就像貓頭鷹猴，擅長觀察，喜歡夜深人靜時一個人思考人生。你理性又敏銳，擁有極強的洞察力與求知欲，是安靜的智慧代表。',
@@ -55,7 +55,7 @@ export const animalProfiles = [
       activity: 9,
       friendliness: 7,
       intelligence: 6,
-      independence: 8,
+      independence: 7,
       curiosity: 9,
     },
     personality:
@@ -66,11 +66,11 @@ export const animalProfiles = [
     name_en: 'Bottlenose Dolphin',
     image: dolphinImg,
     scores: {
-      activity: 9,
-      friendliness: 10,
-      intelligence: 9,
-      independence: 5,
-      curiosity: 10,
+      activity: 8,
+      friendliness: 8,
+      intelligence: 8,
+      independence: 6,
+      curiosity: 7,
     },
     personality:
       '你是一隻寬吻海豚，親切、聰明、充滿愛心！擅長溝通、喜歡群體互動，是團隊的開心果也是解決問題的高手 🌊✨',
