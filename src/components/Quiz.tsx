@@ -3,13 +3,12 @@ import { Button } from './ui/button'
 import { useState, useEffect } from 'react'
 import { quizData } from '@/data/quizData'
 import { useNavigate } from 'react-router'
-import { useDispatch } from 'react-redux'
-import { answerQuestion } from '@/store/quizSlice'
+import { useQuizContext } from '@/hooks/useQuizContext'
 import { useShuffledOptions } from '@/hooks/useShuffleOptions'
 
 export default function Quiz() {
   const navigate = useNavigate()
-  const dispatch = useDispatch()
+  const { answers, setAnswers } = useQuizContext()
 
   const [currentQuestion, setCurrentQuestion] = useState(0)
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null)
@@ -21,12 +20,10 @@ export default function Quiz() {
     const selectedOption = shuffledOptions[index]
 
     setSelectedIndex(index)
-    dispatch(
-      answerQuestion({
-        questionIndex: currentQuestion,
-        answerValue: selectedOption.value,
-      })
-    )
+
+    const updatedAnswers = [...answers]
+    updatedAnswers[currentQuestion] = selectedOption.value
+    setAnswers(updatedAnswers)
 
     setTimeout(() => {
       if (currentQuestion < quizData.length - 1) {
