@@ -33,7 +33,7 @@ export default function ThemeProvider({
     root.classList.add(applied)
   }, [theme])
 
-  const setTheme = (theme: Theme) => {
+  function setTheme(theme: Theme) {
     localStorage.setItem(storageKey, theme)
     setThemeState(theme)
   }

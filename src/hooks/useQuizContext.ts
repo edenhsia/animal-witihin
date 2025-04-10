@@ -1,7 +1,7 @@
 import { useContext } from 'react'
 import { QuizContext } from '@/context/QuizContext'
 
-export const useQuizContext = () => {
+export function useQuizContext() {
   const context = useContext(QuizContext)
 
   if (context === undefined)
