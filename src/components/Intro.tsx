@@ -18,7 +18,7 @@ export default function Intro() {
         題輕鬆有趣的問題，從你的直覺出發，帶你挖掘那隻藏在你心裡的小動物 🐾
       </p>
 
-      <Button asChild>
+      <Button asChild className="w-full max-w-xs mx-auto">
         <Link to="/quiz">開始測驗</Link>
       </Button>
     </Card>
