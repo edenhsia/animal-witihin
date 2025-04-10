@@ -41,7 +41,12 @@ export function getBestMatchAnimal(userScore: Record<ScoreKey, number>) {
     }
   })
 
-  const ranked = scoredProfiles.sort((a, b) => a.distance - b.distance)
+  const ranked = scoredProfiles.sort((a, b) => {
+    if (a.distance === b.distance) {
+      return Math.random() - 0.5
+    }
+    return a.distance - b.distance
+  })
 
   return ranked[0].profile
 }
