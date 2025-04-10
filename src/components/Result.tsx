@@ -11,6 +11,7 @@ import {
   PolarAngleAxis,
   ResponsiveContainer,
 } from 'recharts'
+import { Navigate } from 'react-router'
 
 export default function Result() {
   const { answers } = useSelector((state: RootState) => state.quiz)
@@ -25,6 +26,10 @@ export default function Result() {
     { subject: '獨立', value: finalScore.independence },
     { subject: '好奇', value: finalScore.curiosity },
   ]
+
+  if (!answers || answers.length !== 10) {
+    return <Navigate to="/" replace />
+  }
 
   return (
     <Card className="p-6 w-full max-w-xl space-y-6">
