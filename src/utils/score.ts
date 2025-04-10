@@ -4,11 +4,11 @@ import { animalProfiles } from '@/data/animalProfiles'
 
 export function calcFinalScore(userAnswers: string[]) {
   const totalScore: Record<ScoreKey, number> = {
-    activity: 0,
-    friendliness: 0,
-    intelligence: 0,
-    independence: 0,
-    curiosity: 0,
+    activity: 5,
+    friendliness: 5,
+    intelligence: 5,
+    independence: 5,
+    curiosity: 5,
   }
 
   userAnswers.forEach((answer, questionIndex) => {
