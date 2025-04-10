@@ -22,7 +22,7 @@ export default function Result() {
       <p>{bestMatchAnimal.personality}</p>
 
       <Button asChild>
-        <Link to="/quiz">重新測驗</Link>
+        <Link to="/">重新測驗</Link>
       </Button>
     </Card>
   )
