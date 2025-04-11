@@ -48,12 +48,12 @@ export default function Result() {
       </h2>
 
       <div className="flex items-center justify-center">
-        <img src={bestMatchAnimal.image} className="w-64 rounded-xl mr-4" />
-        <div className="w-full h-50 max-w-64 flex-shrink-0">
+        <img src={bestMatchAnimal.image} className="w-1/2 rounded-xl mr-2" />
+        <div className="w-1/2 h-40 flex-shrink-0">
           <ResponsiveContainer>
             <RadarChart data={radarData}>
               <PolarGrid stroke="#a1a1aa" />
-              <PolarAngleAxis dataKey="subject" />
+              <PolarAngleAxis dataKey="subject" className="text-xs" />
               <Radar
                 name="You"
                 dataKey="value"
