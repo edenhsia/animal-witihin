@@ -16,11 +16,13 @@ export default function App() {
         <ThemeToggle />
 
         <main className="min-h-screen flex items-center justify-center">
-          <Routes>
-            <Route path="/" element={<Intro />} />
-            <Route path="/quiz" element={<Quiz />} />
-            <Route path="/result" element={<Result />} />
-          </Routes>
+          <div className="max-w-full px-4 py-16">
+            <Routes>
+              <Route path="/" element={<Intro />} />
+              <Route path="/quiz" element={<Quiz />} />
+              <Route path="/result" element={<Result />} />
+            </Routes>
+          </div>
         </main>
 
         <Toaster richColors position="top-center" />

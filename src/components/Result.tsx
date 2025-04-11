@@ -71,50 +71,48 @@ export default function Result() {
   }
 
   return (
-    <div className="px-4 py-16">
-      <Card ref={resultRef} className="p-6 w-full max-w-xl">
-        <h2 className="text-xl font-bold text-center">
-          {t('result.title', { animal: t(bestMatchAnimal.name) })}
-        </h2>
+    <Card ref={resultRef} className="p-6 w-full max-w-xl">
+      <h2 className="text-xl font-bold text-center">
+        {t('result.title', { animal: t(bestMatchAnimal.name) })}
+      </h2>
 
-        <div className="md:flex md:items-center md:justify-center">
-          <img
-            src={bestMatchAnimal.image}
-            className="w-60 mx-auto mb-6 rounded-xl md:w-1/2 md:mr-2 md:mb-0 md:ml-0"
-          />
-          <div className="mx-auto w-full h-60 md:w-1/2 md:h-40 md:flex-shrink-0">
-            <ResponsiveContainer>
-              <RadarChart data={radarData}>
-                <PolarGrid stroke="#a1a1aa" />
-                <PolarAngleAxis
-                  dataKey="subject"
-                  style={{
-                    fontSize: '0.75rem',
-                  }}
-                />
-                <Radar
-                  name="Traits"
-                  dataKey="value"
-                  stroke="#e67300"
-                  fill="#e67300"
-                  fillOpacity={0.7}
-                  animationBegin={300}
-                />
-              </RadarChart>
-            </ResponsiveContainer>
-          </div>
+      <div className="md:flex md:items-center md:justify-center">
+        <img
+          src={bestMatchAnimal.image}
+          className="w-60 mx-auto mb-6 rounded-xl md:w-1/2 md:mr-2 md:mb-0 md:ml-0"
+        />
+        <div className="mx-auto w-full h-60 md:w-1/2 md:h-40 md:flex-shrink-0">
+          <ResponsiveContainer>
+            <RadarChart data={radarData}>
+              <PolarGrid stroke="#a1a1aa" />
+              <PolarAngleAxis
+                dataKey="subject"
+                style={{
+                  fontSize: '0.75rem',
+                }}
+              />
+              <Radar
+                name="Traits"
+                dataKey="value"
+                stroke="#e67300"
+                fill="#e67300"
+                fillOpacity={0.7}
+                animationBegin={300}
+              />
+            </RadarChart>
+          </ResponsiveContainer>
         </div>
-        <p>{t(bestMatchAnimal.personality)}</p>
+      </div>
+      <p>{t(bestMatchAnimal.personality)}</p>
 
-        <div ref={buttonRef} className="max-w-xs mx-auto space-y-3">
-          <Button className="w-full" onClick={handleDownload}>
-            {t('result.download_image')}
-          </Button>
-          <Button asChild variant="outline" className="w-full">
-            <Link to="/">{t('result.retake')}</Link>
-          </Button>
-        </div>
-      </Card>
-    </div>
+      <div ref={buttonRef} className="max-w-xs mx-auto space-y-3">
+        <Button className="w-full" onClick={handleDownload}>
+          {t('result.download_image')}
+        </Button>
+        <Button asChild variant="outline" className="w-full">
+          <Link to="/">{t('result.retake')}</Link>
+        </Button>
+      </div>
+    </Card>
   )
 }
