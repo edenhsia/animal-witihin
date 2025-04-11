@@ -15,6 +15,7 @@ import { useTranslation } from 'react-i18next'
 import { useMemo, useRef } from 'react'
 import { toPng } from 'html-to-image'
 import { toast } from 'sonner'
+import html2canvas from 'html2canvas'
 
 export default function Result() {
   const { t } = useTranslation()
@@ -47,23 +48,17 @@ export default function Result() {
 
   async function handleDownload() {
     if (!resultRef.current) return
+    const canvas = await html2canvas(resultRef.current, {
+      useCORS: true,
+      backgroundColor: 'transparent',
+      scale: 2,
+    })
 
-    try {
-      if (buttonRef.current) buttonRef.current.style.display = 'none'
-
-      await new Promise((resolve) => setTimeout(resolve, 100))
-
-      const dataUrl = await toPng(resultRef.current)
-      const link = document.createElement('a')
-      link.download = 'animal-within-result.png'
-      link.href = dataUrl
-      link.click()
-    } catch (err) {
-      console.error('image download failed', err)
-      toast.error(t('result.download_failed'))
-    } finally {
-      if (buttonRef.current) buttonRef.current.style.display = 'block'
-    }
+    const dataUrl = canvas.toDataURL('image/png')
+    const link = document.createElement('a')
+    link.download = 'animal-within.png'
+    link.href = dataUrl
+    link.click()
   }
 
   if (!answers || answers.length !== 10) {
@@ -71,7 +66,7 @@ export default function Result() {
   }
 
   return (
-    <Card ref={resultRef} className="p-6 w-full max-w-xl">
+    <Card ref={resultRef} id="result" className="p-6 w-full max-w-xl">
       <h2 className="text-xl font-bold text-center">
         {t('result.title', { animal: t(bestMatchAnimal.name) })}
       </h2>
