@@ -112,6 +112,9 @@
       "curiosity": "Curiosity"
     },
     "download_image": "Download image",
-    "download_failed": "Failed to download image. Please try again later!"
+    "download_info": "Press and hold the image to save it to your device.",
+    "download_no_open_window": "Unable to open a new window. Please check your browser settings.",
+    "download_failed": "Failed to download image. Please try again later!",
+    "download_preview": "Result preview image"
   }
 }
