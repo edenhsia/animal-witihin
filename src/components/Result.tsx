@@ -13,8 +13,6 @@ import {
 import { Navigate } from 'react-router'
 import { useTranslation } from 'react-i18next'
 import { useMemo, useRef } from 'react'
-import { toPng } from 'html-to-image'
-import { toast } from 'sonner'
 import html2canvas from 'html2canvas'
 
 export default function Result() {
