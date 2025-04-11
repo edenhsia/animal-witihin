@@ -93,7 +93,7 @@ export default function Result() {
                   }}
                 />
                 <Radar
-                  name="You"
+                  name="Traits"
                   dataKey="value"
                   stroke="#e67300"
                   fill="#e67300"
