@@ -1,4 +1,5 @@
-import { ThemeToggle } from './components/ThemeToggle'
+import LanguageToggle from './components/LanguageToggle'
+import ThemeToggle from './components/ThemeToggle'
 import ThemeProvider from './providers/ThemeProvider'
 import QuizProvider from './providers/QuizProvider'
 import { Routes, Route } from 'react-router'
@@ -10,6 +11,7 @@ export default function App() {
   return (
     <ThemeProvider>
       <QuizProvider>
+        <LanguageToggle />
         <ThemeToggle />
 
         <main className="min-h-screen flex items-center justify-center">
