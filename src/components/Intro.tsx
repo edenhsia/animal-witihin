@@ -1,25 +1,23 @@
 import { Card } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { Link } from 'react-router'
+import { useTranslation } from 'react-i18next'
 
 export default function Intro() {
+  const { t } = useTranslation()
+
   return (
     <Card className="max-w-xl w-full p-6 space-y-6">
-      <h1 className="text-3xl font-bold text-center">
-        你的內在人格像哪種動物？
-      </h1>
+      <h1 className="text-3xl font-bold text-center">{t('intro.title')}</h1>
       <p>
-        如果你是一隻動物，你覺得會是哪一種？
+        {t('intro.line1')}
         <br />
-        是奔放的冒險派、冷靜的觀察者，還是那種每天都想耍廢、在角落打瞌睡的類型？
+        {t('intro.line2')}
       </p>
-      <p>
-        這份測驗會透過 10
-        題輕鬆有趣的問題，從你的直覺出發，帶你挖掘那隻藏在你心裡的小動物 🐾
-      </p>
+      <p>{t('intro.line3')}</p>
 
       <Button asChild className="w-full max-w-xs mx-auto">
-        <Link to="/quiz">開始測驗</Link>
+        <Link to="/quiz">{t('intro.start')}</Link>
       </Button>
     </Card>
   )

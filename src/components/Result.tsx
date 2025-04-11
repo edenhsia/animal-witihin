@@ -11,19 +11,30 @@ import {
   ResponsiveContainer,
 } from 'recharts'
 import { Navigate } from 'react-router'
+import { useTranslation } from 'react-i18next'
 
 export default function Result() {
+  const { t } = useTranslation()
   const { answers } = useQuizContext()
 
   const finalScore = calcFinalScore(answers)
   const bestMatchAnimal = getBestMatchAnimal(finalScore)
 
   const radarData = [
-    { subject: '活力', value: finalScore.activity },
-    { subject: '友善', value: finalScore.friendliness },
-    { subject: '智慧', value: finalScore.intelligence },
-    { subject: '獨立', value: finalScore.independence },
-    { subject: '好奇', value: finalScore.curiosity },
+    { subject: t('result.traits.activity'), value: finalScore.activity },
+    {
+      subject: t('result.traits.friendliness'),
+      value: finalScore.friendliness,
+    },
+    {
+      subject: t('result.traits.intelligence'),
+      value: finalScore.intelligence,
+    },
+    {
+      subject: t('result.traits.independence'),
+      value: finalScore.independence,
+    },
+    { subject: t('result.traits.curiosity'), value: finalScore.curiosity },
   ]
 
   if (!answers || answers.length !== 10) {
@@ -33,7 +44,7 @@ export default function Result() {
   return (
     <Card className="p-6 w-full max-w-xl space-y-6">
       <h2 className="text-xl font-bold text-center">
-        你最像的動物是 🐾 {bestMatchAnimal.name}
+        {t('result.title', { animal: t(bestMatchAnimal.name) })}
       </h2>
 
       <div className="flex items-center justify-center">
@@ -44,7 +55,7 @@ export default function Result() {
               <PolarGrid stroke="#a1a1aa" />
               <PolarAngleAxis dataKey="subject" />
               <Radar
-                name="你"
+                name="You"
                 dataKey="value"
                 stroke="#e67300"
                 fill="#e67300"
@@ -55,10 +66,10 @@ export default function Result() {
           </ResponsiveContainer>
         </div>
       </div>
-      <p>{bestMatchAnimal.personality}</p>
+      <p>{t(bestMatchAnimal.personality)}</p>
 
       <Button asChild className="w-full max-w-xs mx-auto">
-        <Link to="/">重新測驗</Link>
+        <Link to="/">{t('result.retake')}</Link>
       </Button>
     </Card>
   )

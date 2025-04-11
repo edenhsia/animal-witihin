@@ -5,8 +5,10 @@ import { quizData } from '@/data/quizData'
 import { useNavigate } from 'react-router'
 import { useQuizContext } from '@/hooks/useQuizContext'
 import { useShuffledOptions } from '@/hooks/useShuffleOptions'
+import { useTranslation } from 'react-i18next'
 
 export default function Quiz() {
+  const { t } = useTranslation()
   const navigate = useNavigate()
   const { answers, setAnswers } = useQuizContext()
 
@@ -47,7 +49,7 @@ export default function Quiz() {
 
   return (
     <Card className="p-6 w-full max-w-xl">
-      <h2>{currentQuestionData.question}</h2>
+      <h2>{t(currentQuestionData.question)}</h2>
       <div className="space-y-3">
         {shuffledOptions.map((option, index) => {
           return (
@@ -58,7 +60,7 @@ export default function Quiz() {
               onClick={() => handleAnserQuestion(index)}
               disabled={selectedIndex !== null}
             >
-              {option.text}
+              {t(option.text)}
             </Button>
           )
         })}
@@ -67,7 +69,7 @@ export default function Quiz() {
       <div className="pt-4 flex items-center">
         {currentQuestion >= 1 && (
           <Button variant="secondary" onClick={handleBack}>
-            ⬅️ 返回
+            ⬅️ {t('quiz.previous')}
           </Button>
         )}
         <div className="text-sm text-zinc-400 ml-auto">

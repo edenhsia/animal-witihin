@@ -6,8 +6,7 @@ import dolphinImg from '@/assets/images/bottlenose-dolphin.png'
 
 export const animalProfiles = [
   {
-    name: '長尾山雀',
-    name_en: 'Long-tailed Tit',
+    name: 'result.animals.tit.name',
     image: titImg,
     scores: {
       activity: 9,
@@ -16,12 +15,10 @@ export const animalProfiles = [
       independence: 5,
       curiosity: 8,
     },
-    personality:
-      '你就像長尾山雀，熱情、好動又有點社交黏人！你喜歡與人一起行動，總能帶動氣氛，是團隊裡的小太陽 🌞。',
+    personality: 'result.animals.tit.personality',
   },
   {
-    name: '北極灰狼',
-    name_en: 'Arctic Gray Wolf',
+    name: 'result.animals.wolf.name',
     image: wolfImg,
     scores: {
       activity: 6,
@@ -30,12 +27,10 @@ export const animalProfiles = [
       independence: 11,
       curiosity: 6,
     },
-    personality:
-      '像北極灰狼的你擁有冷靜與獨立的個性。你追求自由、不喜歡被干涉，常在自己內心世界裡思考。行動低調，但總是精準。',
+    personality: 'result.animals.wolf.personality',
   },
   {
-    name: '貓頭鷹猴',
-    name_en: 'Owl Monkey',
+    name: 'result.animals.monkey.name',
     image: monkeyImg,
     scores: {
       activity: 5,
@@ -44,12 +39,10 @@ export const animalProfiles = [
       independence: 9,
       curiosity: 8,
     },
-    personality:
-      '你就像貓頭鷹猴，擅長觀察，喜歡夜深人靜時一個人思考人生。你理性又敏銳，擁有極強的洞察力與求知欲，是安靜的智慧代表。',
+    personality: 'result.animals.monkey.personality',
   },
   {
-    name: '大耳狐貍',
-    name_en: 'Fennec Fox',
+    name: 'result.animals.fox.name',
     image: foxImg,
     scores: {
       activity: 9,
@@ -58,12 +51,10 @@ export const animalProfiles = [
       independence: 7,
       curiosity: 9,
     },
-    personality:
-      '活潑又機靈的你，就像大耳狐貍。擁有強烈的好奇心，總是對新事物充滿熱情。你喜歡自由探索，行動快速又反應靈敏。',
+    personality: 'result.animals.fox.personality',
   },
   {
-    name: '寬吻海豚',
-    name_en: 'Bottlenose Dolphin',
+    name: 'result.animals.dolphin.name',
     image: dolphinImg,
     scores: {
       activity: 8,
@@ -72,7 +63,6 @@ export const animalProfiles = [
       independence: 6,
       curiosity: 7,
     },
-    personality:
-      '你是一隻寬吻海豚，親切、聰明、充滿愛心！擅長溝通、喜歡群體互動，是團隊的開心果也是解決問題的高手 🌊✨',
+    personality: 'result.animals.dolphin.personality',
   },
 ]

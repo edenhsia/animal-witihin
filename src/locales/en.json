@@ -6,74 +6,110 @@
     "line3": "This fun quiz asks 10 quirky questions to explore your instincts — and help uncover the little creature hiding inside you 🐾",
     "start": "Start Quiz"
   },
-  "q1": {
-    "question": "You walk into an elevator and see a duck in a suit nodding at you. What do you do?",
-    "a": "Nod back—professional courtesy matters.",
-    "b": "Take a photo—this is too absurd!",
-    "c": "Ignore it. Nothing surprises me anymore in this city.",
-    "d": "Start speaking duck. Gotta try!"
+  "quiz": {
+    "previous": "Previous",
+    "q1": {
+      "question": "You walk into an elevator and see a duck in a suit nodding at you. What do you do?",
+      "a": "Nod back—professional courtesy matters.",
+      "b": "Take a photo—this is too absurd!",
+      "c": "Ignore it. Nothing surprises me anymore in this city.",
+      "d": "Start speaking duck. Gotta try!"
+    },
+    "q2": {
+      "question": "You must commute for a year without walking. What do you choose?",
+      "a": "Ride a kangaroo—parkour style every day.",
+      "b": "Float in a balloon through the clouds.",
+      "c": "Use a random portal—sometimes it sends you to the wrong country.",
+      "d": "Drink a magical juice for hyper speed, but sweat like a fountain."
+    },
+    "q3": {
+      "question": "A giant glowing mushroom suddenly grows in your yard. What do you do?",
+      "a": "Start a livestream—this will blow up online!",
+      "b": "Examine it under a microscope. It could be a new energy source!",
+      "c": "Report it to the authorities... and secretly keep a piece.",
+      "d": "Nap underneath it and see if you have weird dreams."
+    },
+    "q4": {
+      "question": "You're invited to a 'Try Not to Laugh' contest. Winner gets a million dollars. What’s your strategy?",
+      "a": "Meditate and enter a zen-like state.",
+      "b": "Analyze old contests and simulate comedy attacks.",
+      "c": "Wear a suit and stay stone-faced with sheer presence.",
+      "d": "Make others laugh while laughing yourself—steal the spotlight."
+    },
+    "q5": {
+      "question": "You receive an order from the future: 'This product will change humanity.' What will you design?",
+      "a": "An AI coat that gives warm hugs to anyone feeling lonely.",
+      "b": "A safety bubble that bounces you if you fall.",
+      "c": "Mind-reading earbuds that catch subconscious thoughts.",
+      "d": "An AI double that declines annoying invitations for you."
+    },
+    "q6": {
+      "question": "You wake up as a cat. What do you do?",
+      "a": "Test if you really have nine lives.",
+      "b": "Observe humans and study their behavior.",
+      "c": "Ask everyone for cuddles and affection.",
+      "d": "Hide. No one must ever find out your secret."
+    },
+    "q7": {
+      "question": "You win 100 million in the lottery. What’s your first purchase?",
+      "a": "Build an animal park so all creatures live happily.",
+      "b": "Invest in tech and make your money multiply.",
+      "c": "Buy a hidden mansion where no one can find you.",
+      "d": "Go abroad immediately for a never-ending vacation!"
+    },
+    "q8": {
+      "question": "You're in a strange contest: Most creative daydream wins. What's your style?",
+      "a": "Stare at a rock for 10 minutes, imagining its volcanic origin story.",
+      "b": "Hold an awkward balance pose like a statue.",
+      "c": "Stare blankly and recite philosophical questions in your head.",
+      "d": "Stare at the judges without blinking. Let them wonder what you're thinking."
+    },
+    "q9": {
+      "question": "You get a magical button that can permanently change one everyday rule. What do you do?",
+      "a": "Everyone gets 8 hours of perfect sleep and wakes up refreshed.",
+      "b": "All desserts become healthy, no weight gain or cavities!",
+      "c": "Pets can clean up and take out the trash—home MVPs!",
+      "d": "Everyone experiences something funny each day—built-in joy!"
+    },
+    "q10": {
+      "question": "The world now has strange new rules—and you actually like them. Which one do you choose?",
+      "a": "Every day plays a 5-second background track only you can hear.",
+      "b": "Every room you enter has automatic mood lighting.",
+      "c": "Subtitles appear in your mind as you speak.",
+      "d": "All mirrors adjust your reflection based on your mood."
+    }
   },
-  "q2": {
-    "question": "You must commute for a year without walking. What do you choose?",
-    "a": "Ride a kangaroo—parkour style every day.",
-    "b": "Float in a balloon through the clouds.",
-    "c": "Use a random portal—sometimes it sends you to the wrong country.",
-    "d": "Drink a magical juice for hyper speed, but sweat like a fountain."
-  },
-  "q3": {
-    "question": "A giant glowing mushroom suddenly grows in your yard. What do you do?",
-    "a": "Start a livestream—this will blow up online!",
-    "b": "Examine it under a microscope. It could be a new energy source!",
-    "c": "Report it to the authorities... and secretly keep a piece.",
-    "d": "Nap underneath it and see if you have weird dreams."
-  },
-  "q4": {
-    "question": "You're invited to a 'Try Not to Laugh' contest. Winner gets a million dollars. What’s your strategy?",
-    "a": "Meditate and enter a zen-like state.",
-    "b": "Analyze old contests and simulate comedy attacks.",
-    "c": "Wear a suit and stay stone-faced with sheer presence.",
-    "d": "Make others laugh while laughing yourself—steal the spotlight."
-  },
-  "q5": {
-    "question": "You receive an order from the future: 'This product will change humanity.' What will you design?",
-    "a": "An AI coat that gives warm hugs to anyone feeling lonely.",
-    "b": "A safety bubble that bounces you if you fall.",
-    "c": "Mind-reading earbuds that catch subconscious thoughts.",
-    "d": "An AI double that declines annoying invitations for you."
-  },
-  "q6": {
-    "question": "You wake up as a cat. What do you do?",
-    "a": "Test if you really have nine lives.",
-    "b": "Observe humans and study their behavior.",
-    "c": "Ask everyone for cuddles and affection.",
-    "d": "Hide. No one must ever find out your secret."
-  },
-  "q7": {
-    "question": "You win 100 million in the lottery. What’s your first purchase?",
-    "a": "Build an animal park so all creatures live happily.",
-    "b": "Invest in tech and make your money multiply.",
-    "c": "Buy a hidden mansion where no one can find you.",
-    "d": "Go abroad immediately for a never-ending vacation!"
-  },
-  "q8": {
-    "question": "You're in a strange contest: Most creative daydream wins. What's your style?",
-    "a": "Stare at a rock for 10 minutes, imagining its volcanic origin story.",
-    "b": "Hold an awkward balance pose like a statue.",
-    "c": "Stare blankly and recite philosophical questions in your head.",
-    "d": "Stare at the judges without blinking. Let them wonder what you're thinking."
-  },
-  "q9": {
-    "question": "You get a magical button that can permanently change one everyday rule. What do you do?",
-    "a": "Everyone gets 8 hours of perfect sleep and wakes up refreshed.",
-    "b": "All desserts become healthy, no weight gain or cavities!",
-    "c": "Pets can clean up and take out the trash—home MVPs!",
-    "d": "Everyone experiences something funny each day—built-in joy!"
-  },
-  "q10": {
-    "question": "The world now has strange new rules—and you actually like them. Which one do you choose?",
-    "a": "Every day plays a 5-second background track only you can hear.",
-    "b": "Every room you enter has automatic mood lighting.",
-    "c": "Subtitles appear in your mind as you speak.",
-    "d": "All mirrors adjust your reflection based on your mood."
+  "result": {
+    "title": "You're most like a {{animal}}!",
+    "retake": "Retake Quiz",
+    "animals": {
+      "tit": {
+        "name": "Long-tailed Tit",
+        "personality": "Like a Long-tailed Tit, you're enthusiastic, active, and a little clingy in a social way! You love doing things with others and always bring energy to the group – you're the little sun of the team 🌞."
+      },
+      "wolf": {
+        "name": "Arctic Gray Wolf",
+        "personality": "Like an Arctic Gray Wolf, you're calm and independent. You value freedom, dislike interference, and often dwell in deep thoughts. You move quietly but always strike with precision."
+      },
+      "monkey": {
+        "name": "Owl Monkey",
+        "personality": "You're like an Owl Monkey – observant, quiet, and thoughtful. You love to think when the world is asleep, and you're known for your strong insight and thirst for knowledge."
+      },
+      "fox": {
+        "name": "Fennec Fox",
+        "personality": "Lively and clever, you're like a Fennec Fox. Your curiosity drives you to explore the unknown, and you're quick to act and sharp in response."
+      },
+      "dolphin": {
+        "name": "Bottlenose Dolphin",
+        "personality": "You're a Bottlenose Dolphin – kind, smart, and full of love! Great at communication and teamwork, you're the cheerful heart of the group and a natural problem-solver 🌊✨."
+      }
+    },
+    "traits": {
+      "activity": "Activity",
+      "friendliness": "Friendliness",
+      "intelligence": "Intelligence",
+      "independence": "Independence",
+      "curiosity": "Curiosity"
+    }
   }
 }
