@@ -13,14 +13,12 @@ import {
 import { Navigate } from 'react-router'
 import { useTranslation } from 'react-i18next'
 import { useMemo, useRef } from 'react'
-import { toPng } from 'html-to-image'
-import { toast } from 'sonner'
+import { downloadAsImage } from '@/utils/downloadAsImage'
 
 export default function Result() {
   const { t } = useTranslation()
   const { answers } = useQuizContext()
 
-  const resultRef = useRef<HTMLDivElement>(null)
   const buttonRef = useRef<HTMLDivElement>(null)
   const finalScore = useMemo(() => calcFinalScore(answers), [answers])
   const bestMatchAnimal = useMemo(
@@ -45,25 +43,8 @@ export default function Result() {
     { subject: t('result.traits.curiosity'), value: finalScore.curiosity },
   ]
 
-  async function handleDownload() {
-    if (!resultRef.current) return
-
-    try {
-      if (buttonRef.current) buttonRef.current.style.display = 'none'
-
-      await new Promise((resolve) => setTimeout(resolve, 100))
-
-      const dataUrl = await toPng(resultRef.current)
-      const link = document.createElement('a')
-      link.download = 'animal-within-result.png'
-      link.href = dataUrl
-      link.click()
-    } catch (err) {
-      console.error('image download failed', err)
-      toast.error(t('result.download_failed'))
-    } finally {
-      if (buttonRef.current) buttonRef.current.style.display = 'block'
-    }
+  function handleDownload() {
+    downloadAsImage({ elementId: 'result', buttonRef })
   }
 
   if (!answers || answers.length !== 10) {
@@ -71,7 +52,7 @@ export default function Result() {
   }
 
   return (
-    <Card ref={resultRef} className="p-6 w-full max-w-xl">
+    <Card id="result" className="p-6 w-full max-w-xl">
       <h2 className="text-xl font-bold text-center">
         {t('result.title', { animal: t(bestMatchAnimal.name) })}
       </h2>
@@ -81,7 +62,7 @@ export default function Result() {
           src={bestMatchAnimal.image}
           className="w-60 mx-auto mb-6 rounded-xl md:w-1/2 md:mr-2 md:mb-0 md:ml-0"
         />
-        <div className="mx-auto w-full h-60 md:w-1/2 md:h-40 md:flex-shrink-0">
+        <div className="mx-auto w-full h-60 md:w-1/2 md:h-36">
           <ResponsiveContainer>
             <RadarChart data={radarData}>
               <PolarGrid stroke="#a1a1aa" />
