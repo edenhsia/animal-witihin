@@ -12,13 +12,17 @@ import {
 } from 'recharts'
 import { Navigate } from 'react-router'
 import { useTranslation } from 'react-i18next'
+import { useMemo } from 'react'
 
 export default function Result() {
   const { t } = useTranslation()
   const { answers } = useQuizContext()
 
-  const finalScore = calcFinalScore(answers)
-  const bestMatchAnimal = getBestMatchAnimal(finalScore)
+  const finalScore = useMemo(() => calcFinalScore(answers), [answers])
+  const bestMatchAnimal = useMemo(
+    () => getBestMatchAnimal(finalScore),
+    [finalScore]
+  )
 
   const radarData = [
     { subject: t('result.traits.activity'), value: finalScore.activity },
