@@ -110,6 +110,8 @@
       "intelligence": "Intelligence",
       "independence": "Independence",
       "curiosity": "Curiosity"
-    }
+    },
+    "download_image": "Download image",
+    "download_failed": "Failed to download image. Please try again later!"
   }
 }

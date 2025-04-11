@@ -12,12 +12,16 @@ import {
 } from 'recharts'
 import { Navigate } from 'react-router'
 import { useTranslation } from 'react-i18next'
-import { useMemo } from 'react'
+import { useMemo, useRef } from 'react'
+import { toPng } from 'html-to-image'
+import { toast } from 'sonner'
 
 export default function Result() {
   const { t } = useTranslation()
   const { answers } = useQuizContext()
 
+  const resultRef = useRef<HTMLDivElement>(null)
+  const buttonRef = useRef<HTMLDivElement>(null)
   const finalScore = useMemo(() => calcFinalScore(answers), [answers])
   const bestMatchAnimal = useMemo(
     () => getBestMatchAnimal(finalScore),
@@ -41,12 +45,33 @@ export default function Result() {
     { subject: t('result.traits.curiosity'), value: finalScore.curiosity },
   ]
 
+  async function handleDownload() {
+    if (!resultRef.current) return
+
+    try {
+      if (buttonRef.current) buttonRef.current.style.display = 'none'
+
+      await new Promise((resolve) => setTimeout(resolve, 100))
+
+      const dataUrl = await toPng(resultRef.current)
+      const link = document.createElement('a')
+      link.download = 'animal-within-result.png'
+      link.href = dataUrl
+      link.click()
+    } catch (err) {
+      console.error('image download failed', err)
+      toast.error(t('result.download_failed'))
+    } finally {
+      if (buttonRef.current) buttonRef.current.style.display = 'block'
+    }
+  }
+
   if (!answers || answers.length !== 10) {
     return <Navigate to="/" replace />
   }
 
   return (
-    <Card className="p-6 w-full max-w-xl space-y-6">
+    <Card ref={resultRef} className="p-6 w-full max-w-xl space-y-6">
       <h2 className="text-xl font-bold text-center">
         {t('result.title', { animal: t(bestMatchAnimal.name) })}
       </h2>
@@ -57,7 +82,12 @@ export default function Result() {
           <ResponsiveContainer>
             <RadarChart data={radarData}>
               <PolarGrid stroke="#a1a1aa" />
-              <PolarAngleAxis dataKey="subject" className="text-xs" />
+              <PolarAngleAxis
+                dataKey="subject"
+                style={{
+                  fontSize: '0.75rem',
+                }}
+              />
               <Radar
                 name="You"
                 dataKey="value"
@@ -72,9 +102,14 @@ export default function Result() {
       </div>
       <p>{t(bestMatchAnimal.personality)}</p>
 
-      <Button asChild className="w-full max-w-xs mx-auto">
-        <Link to="/">{t('result.retake')}</Link>
-      </Button>
+      <div ref={buttonRef} className="max-w-xs mx-auto space-y-3">
+        <Button className="w-full" onClick={handleDownload}>
+          {t('result.download_image')}
+        </Button>
+        <Button asChild variant="outline" className="w-full">
+          <Link to="/">{t('result.retake')}</Link>
+        </Button>
+      </div>
     </Card>
   )
 }

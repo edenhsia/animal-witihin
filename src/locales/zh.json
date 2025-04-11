@@ -110,6 +110,8 @@
       "intelligence": "智慧",
       "independence": "獨立",
       "curiosity": "好奇"
-    }
+    },
+    "download_image": "下載圖片",
+    "download_failed": "無法下載圖片，請稍後再試！"
   }
 }
