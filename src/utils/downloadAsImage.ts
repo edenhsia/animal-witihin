@@ -3,10 +3,10 @@ import Canvas2Image from 'canvas2image-2'
 
 export async function downloadAsImage({
   elementId,
-  buttonRef,
+  hideRef,
 }: {
   elementId: string
-  buttonRef?: React.RefObject<HTMLElement | null>
+  hideRef?: React.RefObject<HTMLElement | null>
 }) {
   const el = document.getElementById(elementId)
   if (!el) {
@@ -15,8 +15,8 @@ export async function downloadAsImage({
   }
 
   try {
-    if (buttonRef?.current instanceof HTMLElement) {
-      buttonRef.current.style.display = 'none'
+    if (hideRef?.current instanceof HTMLElement) {
+      hideRef.current.style.display = 'none'
     }
 
     await new Promise((r) => setTimeout(r, 100))
@@ -30,8 +30,8 @@ export async function downloadAsImage({
   } catch (error) {
     console.error('圖片下載失敗', error)
   } finally {
-    if (buttonRef?.current instanceof HTMLElement) {
-      buttonRef.current.style.display = 'block'
+    if (hideRef?.current instanceof HTMLElement) {
+      hideRef.current.style.display = 'block'
     }
   }
 }

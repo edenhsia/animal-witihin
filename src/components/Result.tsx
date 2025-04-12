@@ -19,7 +19,7 @@ export default function Result() {
   const { t } = useTranslation()
   const { answers } = useQuizContext()
 
-  const buttonRef = useRef<HTMLDivElement>(null)
+  const hideRef = useRef<HTMLDivElement>(null)
   const finalScore = useMemo(() => calcFinalScore(answers), [answers])
   const bestMatchAnimal = useMemo(
     () => getBestMatchAnimal(finalScore),
@@ -44,7 +44,7 @@ export default function Result() {
   ]
 
   function handleDownload() {
-    downloadAsImage({ elementId: 'result', buttonRef })
+    downloadAsImage({ elementId: 'result', hideRef })
   }
 
   if (!answers || answers.length !== 10) {
@@ -86,13 +86,18 @@ export default function Result() {
       </div>
       <p>{t(bestMatchAnimal.personality)}</p>
 
-      <div ref={buttonRef} className="max-w-xs mx-auto space-y-3">
-        <Button className="w-full" onClick={handleDownload}>
-          {t('result.download_image')}
-        </Button>
-        <Button asChild variant="outline" className="w-full">
-          <Link to="/">{t('result.retake')}</Link>
-        </Button>
+      <div ref={hideRef}>
+        <p className="text-xs text-center text-white/80 mb-2">
+          ⚠️ LINE／IG 等 App 內可能無法下載，建議使用瀏覽器重新操作
+        </p>
+        <div className="max-w-xs mx-auto space-y-3">
+          <Button className="w-full" onClick={handleDownload}>
+            {t('result.download_image')}
+          </Button>
+          <Button asChild variant="outline" className="w-full">
+            <Link to="/">{t('result.retake')}</Link>
+          </Button>
+        </div>
       </div>
     </Card>
   )
