@@ -111,10 +111,6 @@
       "independence": "獨立",
       "curiosity": "好奇"
     },
-    "download_image": "下載圖片",
-    "download_info": "請長按圖片另存到相簿",
-    "download_no_open_window": "無法開啟新視窗，請檢查瀏覽器設定",
-    "download_failed": "無法下載圖片，請稍後再試！",
-    "download_preview": "測驗結果分享圖"
+    "download_image": "下載圖片"
   }
 }
