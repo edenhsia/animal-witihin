@@ -6,7 +6,6 @@ import { Routes, Route } from 'react-router'
 import Intro from './components/Intro'
 import Quiz from './components/Quiz'
 import Result from './components/Result'
-import { Toaster } from '@/components/ui/sonner'
 
 export default function App() {
   return (
@@ -24,8 +23,6 @@ export default function App() {
             </Routes>
           </div>
         </main>
-
-        <Toaster richColors position="top-center" />
       </QuizProvider>
     </ThemeProvider>
   )
