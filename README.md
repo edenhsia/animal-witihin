@@ -1,54 +1,22 @@
-# React + TypeScript + Vite
+# Animal Within
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 專案簡介
 
-Currently, two official plugins are available:
+一款趣味風格的性格分析心理測驗，透過十道問題，探索你的內在人格像哪種動物。結果以文字分析與雷達圖呈現，還能生成分享圖片，讓你和朋友分享自己的動物人格。
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 功能特色
 
-## Expanding the ESLint configuration
+- 十道趣味問題，測出屬於你的動物人格
+- 結果以文字＋雷達圖呈現，五大人格向度（活躍、友善、聰明、獨立、好奇）
+- 分數相同時隨機選擇結果，保持測驗趣味性
+- 支援繁體中文、英文雙語切換
+- 測驗結果可下載圖片，方便分享
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 使用技術
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+React、Vite、i18n、shadcn/ui、React Router
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 設計考量
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+- 使用雷達圖視覺化人格特質，提升互動性與可讀性
+- 雙語系設計，提升測驗普及度，適合不同使用者
